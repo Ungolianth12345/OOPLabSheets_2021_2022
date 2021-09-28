@@ -1,0 +1,6 @@
+Programming in Java is an education
+He tried and tried but could not figure it out
+red, ted, fed, led, bed
+
+
+Number of characters: %d\nNumber of lowercase vowels:%d\nNumber of words: %d\nNumber of times "ed" appears in the text: %d
