@@ -4,3 +4,9 @@ red, ted, fed, led, bed
 
 
 Number of characters: %d\nNumber of lowercase vowels:%d\nNumber of words: %d\nNumber of times "ed" appears in the text: %d
+
+
+title, price, isbn, pages = 25, 7, 13, ?
+
+extend jtextarea = it grows
+problem was putting output in, not jtextarea
