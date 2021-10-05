@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Book_Test {
     public static String book_format(String a, double b, String c, int d) {
-        return String.format("%-25s%-8s%-13s%s", a, b, c, d + "\n\n");
+        return "\n\n" + String.format("%-25s%-8s%-13s%s", a, b, c, d);
     }
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Book_Test {
 
         Font font = new Font("monospaced", Font.PLAIN, 12);
 
-        String header = String.format("%-25s%-8s%-13s%s", "Title", "Price", "ISBN", "Pages\n\n");
+        String header = String.format("%-25s%-8s%-13s%s", "Title", "Price", "ISBN", "Pages");
 
         output += header;
 
