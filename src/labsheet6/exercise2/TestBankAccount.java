@@ -1,4 +1,4 @@
-package labsheet5.exercise4;
+package labsheet6.exercise2;
 
 import javax.swing.*;
 
@@ -20,6 +20,8 @@ public class TestBankAccount {
 
         message += "The first BankAccount object details are:\n\n" + b1.toString()
                 + "\n\nThe second BankAccount object details are:\n\n" + b2.toString();
+
+        message += "\n\nThe number of created objects is: " + BankAccount.getCount();
 
         JOptionPane.showMessageDialog(null, message, "Test", JOptionPane.INFORMATION_MESSAGE);
     }

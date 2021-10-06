@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>labsheet6.exercise2.BankAccount</OriginalElement>
+  <nodes>
+    <node x="30.0" y="416.0">labsheet6.exercise2.TestBankAccount</node>
+    <node x="0.0" y="0.0">labsheet6.exercise2.BankAccount</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="labsheet6.exercise2.TestBankAccount" target="labsheet6.exercise2.BankAccount" relationship="CREATE">
+      <point x="0.0" y="-39.5" />
+      <point x="0.0" y="183.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="67.28571428571422" y="203.5" />
+  <SelectedNodes>
+    <node>labsheet6.exercise2.TestBankAccount</node>
+    <node>labsheet6.exercise2.BankAccount</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
