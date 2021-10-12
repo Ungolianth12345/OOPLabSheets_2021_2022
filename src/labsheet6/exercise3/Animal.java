@@ -57,16 +57,18 @@ public class Animal {
 
 	public void setContinents (String[] continents) {
 		//this.continents=continents; //potential breaking of encapsulation
-		/*if(continents!=null)
-			this.continents = Arrays.copyOf(continents,continents.length);*/
-		// Dunno, fix later
-		if (this.continents != null) {
-			for (int i = 0; i < this.continents.length; i++) {
-				this.continents[i] = continents[i];
+		if(continents!=null) {
+			// dfjbnkdjbklgn df djgn kljgn f
+			String[] contins = new String[continents.length];
+			// Removed the this next to continents
+			for (int i = 0; i < continents.length; i++) {
+				contins[i] = continents[i];
 			}
+
+			this.continents = contins;
 		}
 	}
-	
+
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
