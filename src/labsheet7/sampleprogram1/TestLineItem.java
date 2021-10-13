@@ -11,10 +11,10 @@ public class TestLineItem {
         LineItem allLineItems[] = new LineItem[10];
 
         // Create Products
-        Product p1 = new Product("Pen", "This is a red pen");
-        Product p2 = new Product("Pencil", "This is a pencil");
-        Product p3 = new Product("Ruler", "This is a ruler");
-        Product p4 = new Product("Marker","This is a black permanent marker");
+        Product p1 = new Product(1, "Pen", "This is a red pen");
+        Product p2 = new Product(2, "Pencil", "This is a pencil");
+        Product p3 = new Product(3, "Ruler", "This is a ruler");
+        Product p4 = new Product(4,"Marker","This is a black permanent marker");
 
         // Create LineItem objects
 
