@@ -1,4 +1,4 @@
-package labsheet8.exercise1;
+package labsheet8.exercise2;
 
 public class Bicycle extends Vehicle {
     private int gearCount;
