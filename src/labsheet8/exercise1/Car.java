@@ -24,6 +24,6 @@ public class Car extends Vehicle {
 
     // Finish
     public Car(double price, double length, double height, double weight, String manufacturer, String model, int maxPassengers, String registrationNumber) {
-        super()
+        super();
     }
 }
