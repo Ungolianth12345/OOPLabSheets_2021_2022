@@ -33,5 +33,13 @@ public class TestCollegeApp {
         String total = "Total number of students: " + itt.getTotalStudents();
 
         JOptionPane.showMessageDialog(null, total, "Total number of students", JOptionPane.INFORMATION_MESSAGE);
+
+        JOptionPane.showMessageDialog(null, "Jake now moving from the Computing dept to the Creative Media dept");
+
+        creativeMediaStudents[2] = student1;
+        student1.setDepartment("Creative Media");
+        computingStudents[0] = null;
+
+        JOptionPane.showMessageDialog(null, itt.toString());
     }
 }

@@ -18,9 +18,9 @@ public class Car extends Vehicle {
 
     public void setRegistrationNumber(String reg) {
         if(Validator.isValidRegistrationNumber(reg))
-            registrationNumber=reg;
+            registrationNumber = reg;
         else
-            registrationNumber="Invalid Registration Number";
+            registrationNumber = "Invalid Registration Number";
 
     }
 
