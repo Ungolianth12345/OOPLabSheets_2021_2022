@@ -20,19 +20,10 @@ public class Car extends Vehicle {
         this.registrationNumber = registrationNumber;
     }
 
-    public String toString() {
-        return String.format("Price: %.2f\nLength: %.2f\nHeight: %.2f\nWeight: %.2f\nManufacturer: %s\nModel: %s\n" +
-                        "Max passengers: %d\nRegistration number: %s",  getPrice(), getLength(), getHeight(),
-                        getWeight(), getManufacturer(), getModel(), getMaxPassengers(), getRegistrationNumber());
-    }
+    public Car() { }
 
-    public Car() { this(0.0, 0.0, 0.0, 0.0, "No manufacturer specified",
-            "No model specified", 0, "No registration number specified"); }
-
-    public Car(double price, double length, double height, double weight, String manufacturer, String model,
-               int maxPassengers, String registrationNumber) {
-        super(price, length, height, weight, manufacturer, model);
-        setMaxPassengers(maxPassengers);
-        setRegistrationNumber(registrationNumber);
+    // Finish
+    public Car(double price, double length, double height, double weight, String manufacturer, String model, int maxPassengers, String registrationNumber) {
+        super();
     }
 }
