@@ -21,10 +21,22 @@ public class Department {
     }
 
     public String toString() {
-        return "Department Name: " + getName() + "\nStudents: " + getStudents();
+        String str = "";
+
+        str += "Name: " + getName() + "\nList of Students:\n\n";
+
+        for (int i = 0; i < getStudents().length; i++) {
+            if (getStudents()[i] != null) {
+                str += getStudents()[i];
+            }
+        }
+
+        str += "\n";
+
+        return str;
     }
 
-    public Department (String name, Student[] students) {
+    public Department(String name, Student[] students) {
         setName(name);
         setStudents(students);
     }

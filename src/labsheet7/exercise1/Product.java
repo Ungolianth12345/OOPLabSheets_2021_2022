@@ -5,14 +5,18 @@ package labsheet7.exercise1;
 
 public class Product {
     private int id;
+    private static int count = 1000000;
     private String name;
     private String description;
-    private static int count = 1000000;
 
     public Product(String name, String description) {
-        setId();
         setName(name);
         setDescription(description);
+        setId();
+    }
+
+    private void incrementCount() {
+        count++;
     }
 
     public int getId() {
@@ -22,10 +26,6 @@ public class Product {
     public void setId() {
         incrementCount();
         this.id = count;
-    }
-
-    private void incrementCount() {
-        count++;
     }
 
     public String getName() {
@@ -47,4 +47,3 @@ public class Product {
         return "Product details are as follows: id: " + getId() + "  name: " + getName() + "  description: " + getDescription();
     }
 }
-

@@ -21,16 +21,37 @@ public class Institute {
     }
 
     public int getTotalStudents() {
-        int total = 0;#
-        // Fix
-        for (int i = 0; i < departments.length; i++) {
-            for (int j = 0; j < getDepartments(); j++) {
-                total += j;
+        int totalStudents = 0;
+        Student[] students;
+
+        for (int i = 0; i < getDepartments().length; i++) {
+            if (getDepartments()[i] != null) {
+                students = getDepartments()[i].getStudents();
+                for (int j = 0; j < students.length; j++) {
+                    if (students[j] != null) {
+                        totalStudents++;
+                    }
+                }
             }
         }
+        return totalStudents;
     }
 
     public String toString() {
-        return "Institute Name: " + getName() + "\nDepartments: " + getDepartments();
+        StringBuilder str = new StringBuilder();
+
+        str.append("Name: ").append(getName()).append("\n\nDepartments:\n");
+        for (int i = 0; i < getDepartments().length; i++) {
+            if (getDepartments()[i] != null) {
+                str.append(getDepartments()[i]);
+            }
+        }
+
+        return str.toString();
+    }
+
+    public Institute(String name, Department[] departments) {
+        setName(name);
+        setDepartments(departments);
     }
 }

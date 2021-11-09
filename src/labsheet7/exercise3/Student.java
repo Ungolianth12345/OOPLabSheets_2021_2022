@@ -30,7 +30,7 @@ public class Student {
     }
 
     public String toString() {
-        return "Student ID: " + getId() + "\nStudent Name: " + getName() + "Department: " + getDepartment();
+        return "Name: " + getName() + "  ID: " + getId() + "  Department: " + getDepartment() + "\n";
     }
 
     public Student(int id, String name, String department) {
