@@ -6,19 +6,19 @@ operate*/
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
+import java.util.ArrayList;
 
 public class GridLayoutMouseEvent extends JFrame implements MouseListener {
 
-    private JLabel jlabels[];
+    private ArrayList<JLabel> jlabels;
     private int clickEventCounter;
     private int result=-1;
     private boolean gameOver=false;
     private Color defaultColour = getBackground();
 
-    private ImageIcon xImage = new ImageIcon("labsheet12/sampleprogram2/images/cross.gif");
-    private ImageIcon oImage = new ImageIcon("labsheet12/sampleprogram2/images/nought.gif");
+    private final ImageIcon xImage = new ImageIcon("labsheet12/sampleprogram2/images/cross.gif");
+    private final ImageIcon oImage = new ImageIcon("labsheet12/sampleprogram2/images/nought.gif");
 
     public GridLayoutMouseEvent() {
         super("Demonstrating GridLayout & MouseEvent");
@@ -26,13 +26,14 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
         GridLayout layout = new GridLayout(4, 4, 0,0);
         setLayout(layout);
 
-        jlabels = new JLabel[16];
+        jlabels = new ArrayList<>(16);
 
-        for (int i = 0; i < jlabels.length; i++) {
-            jlabels[i] = new JLabel(""+ (i+1),SwingConstants.CENTER);
-            jlabels[i].setBorder(BorderFactory.createEtchedBorder(0, Color.GREEN, Color.RED));
-            add(jlabels[i]);
-            jlabels[i].addMouseListener(this);
+        System.out.println(layout.getRows()*layout.getColumns());
+        for (int i = 0; i <= jlabels.size(); i++) {
+            jlabels.set(i, new JLabel("" + (i + 1), SwingConstants.CENTER));
+            jlabels.get(i).setBorder(BorderFactory.createEtchedBorder(0, Color.GREEN, Color.RED));
+            add(jlabels.get(i));
+            jlabels.get(i).addMouseListener(this);
         }
 
         setSize(500, 400);
@@ -42,7 +43,7 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         GridLayoutMouseEvent b = new GridLayoutMouseEvent();
     }
 
@@ -80,18 +81,18 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
 
         if(clickEventCounter==16 && result==0) {
             JOptionPane.showMessageDialog(null, "Neither player wins!", "A Tie!!",
-                           JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.INFORMATION_MESSAGE);
 
             gameOver = true;
         }
 
-         if(result==1 || result==2 || (result==0 && gameOver)) {
-             JOptionPane.showMessageDialog(null, "Game Over", "Game Over!!",
-                     JOptionPane.INFORMATION_MESSAGE);
+        if(result==1 || result==2 || (result==0 && gameOver)) {
+            JOptionPane.showMessageDialog(null, "Game Over", "Game Over!!",
+                    JOptionPane.INFORMATION_MESSAGE);
 
              /*I have omitted about 6/7 lines of code here which reset the game back to its original state
              so the user can play again. This is for an exercise that follows this */
-         }
+        }
 
 
     }

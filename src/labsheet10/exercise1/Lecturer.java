@@ -1,9 +1,11 @@
 package labsheet10.exercise1;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Lecturer implements Person {
+public abstract class Lecturer implements Person {
     private String name;
     private String address;
     private GregorianCalendar dateOfBirth;
@@ -59,26 +61,25 @@ public class Lecturer implements Person {
         this.dateOfAppointment = dateOfAppointment;
     }
 
-    // abstract method
-    public String getStatus() {
-        return "Status";
-    }
+    public abstract String getStatus();
 
-    // abstract method
-    public int getPointOnScale() {
-        return 0;
-    }
+    public abstract int getPointOnScale();
 
-    @Override
     public String toString() {
-        return "Lecturer{" +
-                "name='" + getName() + '\'' +
-                ", address='" + getAddress() + '\'' +
-                ", dateOfBirth=" + getDateOfBirth() +
-                ", staffID='" + getStaffID() + '\'' +
-                ", coursesTaught=" + Arrays.toString(coursesTaught) +
-                ", dateOfAppointment=" + getDateOfAppointment() +
-                '}';
+        String output = "Lecturer name is " + getName() + "\nLecturer address is " + getAddress() +
+                "\nLecturer date of birth is ";
+        SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
+        if(getDateOfBirth() != null) {
+            Date dob = getDateOfBirth().getTime();
+            output += formatDate.format(dob);
+        } else
+            output += "Undefined";
+        output += "\nLecturer Staff ID is " + getStaffID() +
+                "\nLecturer Courses Taught are " + Arrays.toString(getCoursesTaught()) +
+                "\nLecturer Date of Appointment is " + formatDate.format(getDateOfAppointment().getTime()) +
+                "\nLecturer Status is " + getStatus() +
+                "\nLecturer Point on Scale is " + getPointOnScale();
+        return output;
     }
 
     public Lecturer(String name, String address, GregorianCalendar dateOfBirth, String staffID, String[] coursesTaught, GregorianCalendar dateOfAppointment) {

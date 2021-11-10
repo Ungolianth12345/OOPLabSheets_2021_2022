@@ -1,5 +1,6 @@
 package labsheet10.exercise1;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class PermanentLecturer extends Lecturer {
@@ -14,7 +15,6 @@ public class PermanentLecturer extends Lecturer {
         this.pensionEntitlements = pensionEntitlements;
     }
 
-    @Override
     public String getStatus() {
         return status;
     }
@@ -23,15 +23,20 @@ public class PermanentLecturer extends Lecturer {
         this.status = status;
     }
 
-    // implement getPointOnScale
+    public int getPointOnScale() {
+        Calendar today = Calendar.getInstance();
+        int yearsWorked = today.get(Calendar.YEAR) - getDateOfAppointment().get(Calendar.YEAR);
 
+        if(today.get(Calendar.MONTH)<getDateOfAppointment().get(Calendar.MONTH)
+                || (today.get(Calendar.MONTH)==getDateOfAppointment().get(Calendar.MONTH)
+                && today.get(Calendar.DATE)<getDateOfAppointment().get(Calendar.DATE)))
+            yearsWorked--;
 
-    @Override
+        return Math.min(yearsWorked, 20);
+    }
+
     public String toString() {
-        return "PermanentLecturer{" +
-                "pensionEntitlements='" + pensionEntitlements + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return super.toString() + "\nLecturer Pension Entitlements: " + getPensionEntitlements();
     }
 
     public PermanentLecturer(String name, String address, GregorianCalendar dateOfBirth, String staffID,

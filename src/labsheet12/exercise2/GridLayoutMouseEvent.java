@@ -5,12 +5,9 @@ package labsheet12.exercise2;
 operate*/
 
 import javax.swing.*;
-import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GridLayoutMouseEvent extends JFrame implements MouseListener {
 
@@ -20,8 +17,8 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
     private boolean gameOver=false;
     private Color defaultColour = getBackground();
 
-    private ImageIcon xImage = new ImageIcon("labsheet12/sampleprogram2/images/cross.gif");
-    private ImageIcon oImage = new ImageIcon("labsheet12/sampleprogram2/images/nought.gif");
+    private final ImageIcon xImage = new ImageIcon("labsheet12/sampleprogram2/images/cross.gif");
+    private final ImageIcon oImage = new ImageIcon("labsheet12/sampleprogram2/images/nought.gif");
 
     public GridLayoutMouseEvent() {
         super("Demonstrating GridLayout & MouseEvent");
@@ -29,9 +26,8 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
         GridLayout layout = new GridLayout(4, 4, 0,0);
         setLayout(layout);
 
-        jlabels = new ArrayList<JLabel>(16);
+        jlabels = new ArrayList<>(layout.getRows() * layout.getColumns());
 
-        System.out.println(jlabels.size());
         for (int i = 0; i <= layout.getRows()*layout.getColumns(); i++) {
             jlabels.set(i, new JLabel("" + (i + 1), SwingConstants.CENTER));
             jlabels.get(i).setBorder(BorderFactory.createEtchedBorder(0, Color.GREEN, Color.RED));
@@ -46,7 +42,7 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         GridLayoutMouseEvent b = new GridLayoutMouseEvent();
     }
 

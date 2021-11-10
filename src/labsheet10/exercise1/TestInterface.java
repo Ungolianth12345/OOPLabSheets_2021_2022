@@ -7,13 +7,14 @@ PostGraduate classes as well as the Person interface*/
 import java.util.*;
 
 public class TestInterface {
-     public static void main(String args[]) {
+     public static void main(String[] args) {
 			System.out.println("Testing the UnderGraduate no-arg constructor: ");
 			UnderGraduate u1 = new UnderGraduate();
 			System.out.println(u1);
 
 			System.out.println("\n\nTesting the UnderGraduate multi-arg constructor: ");
-			UnderGraduate u2 = new UnderGraduate("Tommy Tiernan", "Galway", new GregorianCalendar(1970,5,22),"t123456","Comedy",3.12);
+			UnderGraduate u2 = new UnderGraduate("Tommy Tiernan", "Galway", new GregorianCalendar(1970,
+					5,22),"t123456","Comedy",3.12);
 			System.out.println(u2);
 
 			System.out.println("\n\nTesting the PostGraduate no-arg constructor: ");
@@ -21,7 +22,35 @@ public class TestInterface {
 			System.out.println(p1);
 
 			System.out.println("\n\nTesting the PostGraduate multi-arg constructor: ");
-			PostGraduate p2 = new PostGraduate("Eddie Murphy", "USA", new GregorianCalendar(1961,7,10), "t234567", "Comedy", "Frank Carson");
+			PostGraduate p2 = new PostGraduate("Eddie Murphy", "USA", new GregorianCalendar(1961,7,
+					10), "t234567", "Comedy", "Frank Carson");
 			System.out.println(p2);
+
+			PermanentLecturer l1 = new PermanentLecturer("Thomas Aquinas", "Dublin",
+					new GregorianCalendar(1984,12,31), "52673", new String[]{"Economics 101",
+		 			"Media Presentation", "Political Debate"}, new GregorianCalendar(2003, 6, 23),
+					"Lots and lots of Pension Entitlements :-)", "Full-time Professorship");
+
+			PermanentLecturer l2 = new PermanentLecturer("Uncle Bob Martin","Philadelpia, USA",
+					new GregorianCalendar(1952,3,19),"t0044356",
+					new String[]{"Agile Methods","OO Analysis & Design","Design Patterns"},
+					new GregorianCalendar(1986,2,18), "Oodles of Pension " +
+					"Entitlements :-)","Part-time Senior Research Fellow");
+
+			TemporaryLecturer t1 = new TemporaryLecturer("Richard O' Neill","Tallaght, Dublin", new
+					GregorianCalendar(1985,2,4),"3536278b", new String[] {"Applied Biology",
+					"Microbiology"},new GregorianCalendar(2018,3,15),762);
+
+			TemporaryLecturer t2 = new TemporaryLecturer("Mary McKenzie","Bundoran, Donegal",new
+					GregorianCalendar(1971,5,13),"647382", new String[]{"Fractal Geometry",
+					"Tensors"},new GregorianCalendar(2016,2,8),1342);
+
+			Person[] allPersons = {u1, u2, p1, p2, l1, l2, t1, t2};
+
+		 System.out.println("\n\nTesting the functionality of PermanentLecturer and TemporaryLecturer, as well as " +
+				 "UnderGraduate and PostGraduate,\nby displaying object state of all four concrete classes " +
+				 "polymorphically, using a loop and the interface Person as a reference\n\n");
+
+		 for (Person allPerson : allPersons) System.out.println(allPerson + "\n\n");
      	}	   
 }
